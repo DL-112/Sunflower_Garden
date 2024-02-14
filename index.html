@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunflower Garden For You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <canvas id="sunflowerCanvas"></canvas>
+    <button id="growButton">Grow Sunflower</button>
+    <div class="text">
+      <p id="text"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      var canvas = document.getElementById('sunflowerCanvas');
+      var context = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Load background image
+      var backgroundImage = new Image();
+      backgroundImage.src = 'bg.jpg';
+
+      // Draw background image
+      backgroundImage.onload = function() {
+        context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+      };
+    };
+  </script>
+</body>
+</html>
